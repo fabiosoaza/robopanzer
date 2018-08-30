@@ -1,4 +1,4 @@
-package com.robopanzer;
+package robopanzer;
 
 import robocode.*;
 
@@ -16,4 +16,4 @@ public class RoboPanzer extends Robot {
         fire(1);
     }
 }
-  
+

@@ -23,6 +23,22 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+			<plugin>
+			    <artifactId>maven-clean-plugin</artifactId>
+			    <version>3.1.0</version>
+			    <configuration>
+			      <filesets>
+			        <fileset>
+			          <directory>robots</directory>
+			          <includes>
+			            <include>*</include>
+			            <include>**/*.log</include>
+			          </includes>		
+			          <followSymlinks>false</followSymlinks>
+			        </fileset>
+			      </filesets>
+			    </configuration>
+			  </plugin>
 		</plugins>
 	</build>
 
@@ -34,76 +50,6 @@
 			<scope>system</scope>
 			<systemPath>${robocode.libs.path}/robocode.jar</systemPath>
 		</dependency>
-
-		<dependency>
-			<groupId>net.sf.robocode</groupId>
-			<artifactId>robocode.battle</artifactId>
-			<version>${robocode.version}</version>
-			<scope>system</scope>
-			<systemPath>${robocode.libs.path}/robocode.battle-1.9.3.2.jar
-			</systemPath>
-		</dependency>
-
-
-		<dependency>
-			<groupId>net.sf.robocode</groupId>
-			<artifactId>robocode.core</artifactId>
-			<version>${robocode.version}</version>
-			<scope>system</scope>
-			<systemPath>${robocode.libs.path}/robocode.core-1.9.3.2.jar
-			</systemPath>
-		</dependency>
-
-		<dependency>
-			<groupId>net.sf.robocode</groupId>
-			<artifactId>robocode.host</artifactId>
-			<version>${robocode.version}</version>
-			<scope>system</scope>
-			<systemPath>${robocode.libs.path}/robocode.host-1.9.3.2.jar
-			</systemPath>
-		</dependency>
-		<dependency>
-			<groupId>net.sf.robocode</groupId>
-			<artifactId>robocode.repository</artifactId>
-			<version>${robocode.version}</version>
-			<scope>system</scope>
-			<systemPath>${robocode.libs.path}/robocode.repository-1.9.3.2.jar
-			</systemPath>
-		</dependency>
-
-		<dependency>
-			<groupId>net.sf.robocode</groupId>
-			<artifactId>robocode.sound</artifactId>
-			<version>${robocode.version}</version>
-			<scope>system</scope>
-			<systemPath>${robocode.libs.path}/robocode.sound-1.9.3.2.jar
-			</systemPath>
-		</dependency>
-		<dependency>
-			<groupId>net.sf.robocode</groupId>
-			<artifactId>robocode.ui</artifactId>
-			<version>${robocode.version}</version>
-			<scope>system</scope>
-			<systemPath>${robocode.libs.path}/robocode.ui-1.9.3.2.jar
-			</systemPath>
-		</dependency>
-		<dependency>
-			<groupId>net.sf.robocode</groupId>
-			<artifactId>robocode.ui.editor</artifactId>
-			<version>${robocode.version}</version>
-			<scope>system</scope>
-			<systemPath>${robocode.libs.path}/robocode.ui.editor-1.9.3.2.jar
-			</systemPath>
-		</dependency>
-
-		<dependency>
-			<groupId>net.sf.robocode</groupId>
-			<artifactId>robocode.roborumble</artifactId>
-			<version>${robocode.version}</version>
-			<scope>system</scope>
-			<systemPath>${robocode.libs.path}/roborumble.jar</systemPath>
-		</dependency>
-
 		<dependency>
 			<groupId>org.picocontainer</groupId>
 			<artifactId>picocontainer</artifactId>
@@ -114,6 +60,8 @@
 			<artifactId>codesize</artifactId>
 			<version>1.1</version>
 		</dependency>
+		
+		
 	</dependencies>
 
 </project>
