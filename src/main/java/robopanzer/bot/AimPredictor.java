@@ -17,7 +17,7 @@ public class AimPredictor {
 	
 	public void point(BulletPredictor bullet) {
 		EnemyPredictor enemyPredictor = new EnemyPredictor(enemy);
-		// calculate gun turn to predicted x,y location
+		// calcula a quantidade de graus para mover a mira
 		double enemyAngle = RobotUtils.calculateAbsoluteBearing(new Point2D.Double(robot.getX(), robot.getY()),
 				enemyPredictor.getPredictedPoint(bullet.getTime()));
 		robot.setTurnGunRight(RobotUtils.calculateNormalizedBearing(enemyAngle - robot.getGunHeading()));

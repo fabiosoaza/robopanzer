@@ -23,7 +23,6 @@ public class Robao extends AdvancedRobot {
 		gun.init();
 				
 		setTurnRadarRight(360);
-			
 
 		while (true) {
 			radar.scan();
@@ -36,8 +35,6 @@ public class Robao extends AdvancedRobot {
 	}
 
 
-	
-
 	public void onScannedRobot(ScannedRobotEvent e) {
 		radar.onScannedRobot(e);	
 	}
@@ -46,7 +43,6 @@ public class Robao extends AdvancedRobot {
 		radar.onRobotDeath(e);
 	}
 
-
 	private Color getRandomcolor() {
 		return new Color(getRandomRgbColor(), getRandomRgbColor(), getRandomRgbColor());
 	}
@@ -54,7 +50,6 @@ public class Robao extends AdvancedRobot {
 	private int getRandomRgbColor() {
 		return new Random().ints(0, 256).findAny().getAsInt();
 	}
-
 
 	private static class BasicMovement{
 		

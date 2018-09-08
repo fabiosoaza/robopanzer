@@ -43,8 +43,15 @@ public class Radar {
 	}
 	
 	public boolean shouldTrack(ScannedRobotEvent e) {
-		return (enemy.isNotScanned() || e.getDistance() < enemy.getDistance() - 70 ||
-				e.getName().equals(enemy.getName()));
+		return (enemy.isNotScanned() || isNear(e) || isCurrentTarget(e));
+	}
+
+	private boolean isCurrentTarget(ScannedRobotEvent e) {
+		return e.getName().equals(enemy.getName());
+	}
+
+	private boolean isNear(ScannedRobotEvent e) {
+		return e.getDistance() < enemy.getDistance() - 70;
 	}
 	
 	public boolean wasTracking(RobotDeathEvent e) {

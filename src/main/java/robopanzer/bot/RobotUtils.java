@@ -22,17 +22,33 @@ public class RobotUtils {
 		double arcSin = Math.toDegrees(Math.asin(xo / hyp));
 		double bearing = 0;
 
-		if (xo > 0 && yo > 0) { // both pos: lower-Left
+		if (isLowerLeft(xo, yo)) { 
 			bearing = arcSin;
-		} else if (xo < 0 && yo > 0) { // x neg, y pos: lower-right
-			bearing = 360 + arcSin; // arcsin is negative here, actually 360 - ang
-		} else if (xo > 0 && yo < 0) { // x pos, y neg: upper-left
+		} else if (isLowerRight(xo, yo)) { 
+			bearing = 360 + arcSin; 
+		} else if (isUpperLeft(xo, yo)) { 
 			bearing = 180 - arcSin;
-		} else if (xo < 0 && yo < 0) { // both neg: upper-right
-			bearing = 180 - arcSin; // arcsin is negative here, actually 180 + ang
+		} else if (isUpperRight(xo, yo)) { 
+			bearing = 180 - arcSin; 
 		}
 
 		return bearing;
+	}
+
+	private static boolean isUpperRight(double xo, double yo) {
+		return xo < 0 && yo < 0;
+	}
+
+	private static boolean isUpperLeft(double xo, double yo) {
+		return xo > 0 && yo < 0;
+	}
+
+	private static boolean isLowerRight(double xo, double yo) {
+		return xo < 0 && yo > 0;
+	}
+
+	private static boolean isLowerLeft(double xo, double yo) {
+		return xo > 0 && yo > 0;
 	}
 
 	public static double calculateNormalizedBearing(double angle) {

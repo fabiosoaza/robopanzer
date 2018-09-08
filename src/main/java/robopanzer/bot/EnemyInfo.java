@@ -40,19 +40,10 @@ public class EnemyInfo {
 
 	}
 
-	/*
-	 * Computes the lentgh of the adjacent side of a triangle (which may actually be
-	 * negative in some cases), and then offsets it by our robot's Y value.
-	 */
 	private double getUpdateY(ScannedRobotEvent event, AdvancedRobot robot, double absBearingDeg) {
 		return robot.getY() + Math.cos(Math.toRadians(absBearingDeg)) * event.getDistance();
 	}
 
-	/*
-	 * 
-	 * Computes the lentgh of the opposite side of a triangle (which may actually be
-	 * negative in some cases), and then offsets it by our robot's X value.
-	 */
 	private double getUpdatedX(ScannedRobotEvent event, AdvancedRobot robot, double absBearingDeg) {
 		return robot.getX() + Math.sin(Math.toRadians(absBearingDeg)) * event.getDistance();
 	}
