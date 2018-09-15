@@ -33,10 +33,12 @@ public class EnemyInfo {
 		distance = event.getDistance();
 		heading = event.getHeading();
 		name = event.getName();
+		velocity = event.getVelocity();
 		double absBearingDeg = calculateAbsoluteBearing(event, robot);
 		double updatedX = getUpdatedX(event, robot, absBearingDeg);
 		double updatedY = getUpdateY(event, robot, absBearingDeg);
 		coordinates.setLocation(updatedX, updatedY);
+		
 
 	}
 
