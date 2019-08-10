@@ -5,7 +5,7 @@ import java.awt.geom.Point2D;
 import robocode.AdvancedRobot;
 import robocode.Condition;
 import robocode.util.Utils;
-import robopanzer.examples.common.BotUtils;
+import robopanzer.commons.RobocodeUtils;
 
 class GFTWave extends Condition {
 	static Point2D targetLocation;
@@ -54,7 +54,7 @@ class GFTWave extends Condition {
 	}
  
 	private void advance() {
-		distanceTraveled += BotUtils.bulletVelocity(bulletPower);
+		distanceTraveled += RobocodeUtils.bulletVelocity(bulletPower);
 	}
  
 	private boolean hasArrived() {
@@ -62,9 +62,9 @@ class GFTWave extends Condition {
 	}
  
 	private int currentBin() {
-		int bin = (int)Math.round(((Utils.normalRelativeAngle(BotUtils.absoluteBearing(gunLocation, targetLocation) - bearing)) /
+		int bin = (int)Math.round(((Utils.normalRelativeAngle(RobocodeUtils.absoluteBearing(gunLocation, targetLocation) - bearing)) /
 				(lateralDirection * BIN_WIDTH)) + MIDDLE_BIN);
-		return BotUtils.minMax(bin, 0, BINS - 1);
+		return RobocodeUtils.minMax(bin, 0, BINS - 1);
 	}
  
 	private int mostVisitedBin() {

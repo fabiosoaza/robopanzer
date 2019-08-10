@@ -2,6 +2,8 @@ package robopanzer.bot;
 
 import java.awt.geom.Point2D;
 
+import robopanzer.commons.EnemyInfo;
+
 public class EnemyPredictor {
 
 	

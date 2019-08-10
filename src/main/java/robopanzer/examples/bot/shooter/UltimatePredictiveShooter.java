@@ -3,7 +3,7 @@ package robopanzer.examples.bot.shooter;
 import robocode.AdvancedRobot;
 import robocode.RobotDeathEvent;
 import robocode.ScannedRobotEvent;
-import robopanzer.bot.RobotUtils;
+import robopanzer.commons.RobocodeUtils;
 import robopanzer.examples.common.SimpleEnemy;
 
 public class UltimatePredictiveShooter extends AdvancedRobot {
@@ -83,11 +83,11 @@ public class UltimatePredictiveShooter extends AdvancedRobot {
 
 	// computes the absolute bearing between two points
 	double absoluteBearing(double x1, double y1, double x2, double y2) {
-		return RobotUtils.calculateAbsoluteBearing(x1, y1, x2, y2);	
+		return RobocodeUtils.calculateAbsoluteBearing(x1, y1, x2, y2);	
 	}
 
 	// normalizes a bearing to between +180 and -180
 	double normalizeBearing(double angle) {
-		return RobotUtils.calculateNormalizedBearing(angle);
+		return RobocodeUtils.calculateNormalizedBearing(angle);
 	}
 }

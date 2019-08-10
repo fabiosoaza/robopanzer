@@ -4,10 +4,10 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.robopanzer</groupId>
 	<artifactId>robopanzer</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.1.0-SNAPSHOT</version>
 
 	<properties>
-		<robocode.version>1.9.3.2</robocode.version>
+		<robocode.version>1.9.3.6</robocode.version>
 		<robocode.libs.path>${basedir}/libs</robocode.libs.path>
 	</properties>
 
@@ -55,7 +55,7 @@
 			<artifactId>robocode.battle</artifactId>
 			<version>${robocode.version}</version>
 			<scope>system</scope>
-			<systemPath>${robocode.libs.path}/robocode.battle-1.9.3.2.jar
+			<systemPath>${robocode.libs.path}/robocode.battle-${robocode.version}.jar
 			</systemPath>
 		</dependency>
  		<dependency>
@@ -63,7 +63,7 @@
 			<artifactId>robocode.core</artifactId>
 			<version>${robocode.version}</version>
 			<scope>system</scope>
-			<systemPath>${robocode.libs.path}/robocode.core-1.9.3.2.jar
+			<systemPath>${robocode.libs.path}/robocode.core-${robocode.version}.jar
 			</systemPath>
 		</dependency>
  		<dependency>
@@ -71,7 +71,7 @@
 			<artifactId>robocode.host</artifactId>
 			<version>${robocode.version}</version>
 			<scope>system</scope>
-			<systemPath>${robocode.libs.path}/robocode.host-1.9.3.2.jar
+			<systemPath>${robocode.libs.path}/robocode.host-${robocode.version}.jar
 			</systemPath>
 		</dependency>
 		<dependency>
@@ -79,7 +79,7 @@
 			<artifactId>robocode.repository</artifactId>
 			<version>${robocode.version}</version>
 			<scope>system</scope>
-			<systemPath>${robocode.libs.path}/robocode.repository-1.9.3.2.jar
+			<systemPath>${robocode.libs.path}/robocode.repository-${robocode.version}.jar
 			</systemPath>
 		</dependency>
  		<dependency>
@@ -87,7 +87,7 @@
 			<artifactId>robocode.sound</artifactId>
 			<version>${robocode.version}</version>
 			<scope>system</scope>
-			<systemPath>${robocode.libs.path}/robocode.sound-1.9.3.2.jar
+			<systemPath>${robocode.libs.path}/robocode.sound-${robocode.version}.jar
 			</systemPath>
 		</dependency>
 		<dependency>
@@ -95,7 +95,7 @@
 			<artifactId>robocode.ui</artifactId>
 			<version>${robocode.version}</version>
 			<scope>system</scope>
-			<systemPath>${robocode.libs.path}/robocode.ui-1.9.3.2.jar
+			<systemPath>${robocode.libs.path}/robocode.ui-${robocode.version}.jar
 			</systemPath>
 		</dependency>
 

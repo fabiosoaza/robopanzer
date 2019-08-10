@@ -5,7 +5,7 @@ import java.awt.geom.Rectangle2D;
 
 import robocode.AdvancedRobot;
 import robocode.ScannedRobotEvent;
-import robopanzer.examples.common.BotUtils;
+import robopanzer.commons.RobocodeUtils;
 
 class GFTMovement {
 	private static final double BATTLE_FIELD_WIDTH = 800;
@@ -30,19 +30,19 @@ class GFTMovement {
 		double enemyAbsoluteBearing = robot.getHeadingRadians() + e.getBearingRadians();
 		double enemyDistance = e.getDistance();
 		Point2D robotLocation = new Point2D.Double(robot.getX(), robot.getY());
-		Point2D enemyLocation = BotUtils.project(robotLocation, enemyAbsoluteBearing, enemyDistance);
+		Point2D enemyLocation = RobocodeUtils.getPointTo(robotLocation, enemyAbsoluteBearing, enemyDistance);
 		Point2D robotDestination;
 		double tries = 0;
-		while (!fieldRectangle.contains(robotDestination = BotUtils.project(enemyLocation, enemyAbsoluteBearing + Math.PI + direction,
+		while (!fieldRectangle.contains(robotDestination = RobocodeUtils.getPointTo(enemyLocation, enemyAbsoluteBearing + Math.PI + direction,
 				enemyDistance * (DEFAULT_EVASION - tries / 100.0))) && tries < MAX_TRIES) {
 			tries++;
 		}
-		if ((Math.random() < (BotUtils.bulletVelocity(enemyFirePower) / REVERSE_TUNER) / enemyDistance ||
-				tries > (enemyDistance / BotUtils.bulletVelocity(enemyFirePower) / WALL_BOUNCE_TUNER))) {
+		if ((Math.random() < (RobocodeUtils.bulletVelocity(enemyFirePower) / REVERSE_TUNER) / enemyDistance ||
+				tries > (enemyDistance / RobocodeUtils.bulletVelocity(enemyFirePower) / WALL_BOUNCE_TUNER))) {
 			direction = -direction;
 		}
 		// Jamougha's cool way
-		double angle = BotUtils.absoluteBearing(robotLocation, robotDestination) - robot.getHeadingRadians();
+		double angle = RobocodeUtils.absoluteBearing(robotLocation, robotDestination) - robot.getHeadingRadians();
 		robot.setAhead(Math.cos(angle) * 100);
 		robot.setTurnRightRadians(Math.tan(angle));
 	}

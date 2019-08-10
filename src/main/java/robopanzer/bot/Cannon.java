@@ -1,6 +1,7 @@
 package robopanzer.bot;
 
 import robocode.AdvancedRobot;
+import robopanzer.commons.EnemyInfo;
 
 public class Cannon {
 
@@ -17,7 +18,7 @@ public class Cannon {
 		robot.setAdjustGunForRobotTurn(true);
 	}
 
-	public void project() {
+	public void fire() {
 		if (enemy.isNotScanned())
 			return;
 		
@@ -32,7 +33,7 @@ public class Cannon {
 	private void fire(double firePower) {
 		//evita deperdicio de disparos
 		if (isCool() && isCannonReady()) {
-			robot.setFire(firePower);
+			//robot.setFire(firePower);
 		}
 	}
 

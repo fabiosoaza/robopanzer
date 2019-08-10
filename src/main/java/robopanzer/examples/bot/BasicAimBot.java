@@ -2,7 +2,7 @@ package robopanzer.examples.bot;
 
 import robocode.AdvancedRobot;
 import robocode.ScannedRobotEvent;
-import robopanzer.bot.RobotUtils;
+import robopanzer.commons.RobocodeUtils;
 
 public class BasicAimBot extends AdvancedRobot {
 	public void run() {
@@ -15,8 +15,10 @@ public class BasicAimBot extends AdvancedRobot {
 	
 	public void onScannedRobot(ScannedRobotEvent e) {
 		setAdjustGunForRobotTurn(true);
-		setTurnGunRight(getHeading() - getGunHeading() + RobotUtils.calculateNormalizedBearing(e.getBearing()));
-		fire( RobotUtils.calculateFirePower(e.getDistance()) );
+		setAdjustRadarForGunTurn(true);
+		setAdjustRadarForRobotTurn(true);
+		setTurnGunRight(getHeading() - getGunHeading() + RobocodeUtils.calculateNormalizedBearing(e.getBearing()));
+	//	fire( RobotUtils.calculateFirePower(e.getDistance()) );
 	}
 
 

@@ -6,7 +6,7 @@ import java.awt.geom.Point2D;
 import robocode.AdvancedRobot;
 import robocode.ScannedRobotEvent;
 import robocode.util.Utils;
-import robopanzer.examples.common.BotUtils;
+import robopanzer.commons.RobocodeUtils;
  
 // GFTargetingBot, by PEZ. A simple GuessFactorTargeting bot for tutorial purposes.
 // Use the code as you see fit. Of course if I do not mind credits.
@@ -38,11 +38,11 @@ public class GFTargetingBot extends AdvancedRobot {
 		double enemyDistance = e.getDistance();
 		double enemyVelocity = e.getVelocity();
 		if (enemyVelocity != 0) {
-			lateralDirection = BotUtils.sign(enemyVelocity * Math.sin(e.getHeadingRadians() - enemyAbsoluteBearing));
+			lateralDirection = RobocodeUtils.sign(enemyVelocity * Math.sin(e.getHeadingRadians() - enemyAbsoluteBearing));
 		}
 		GFTWave wave = new GFTWave(this);
 		wave.gunLocation = new Point2D.Double(getX(), getY());
-		GFTWave.targetLocation = BotUtils.project(wave.gunLocation, enemyAbsoluteBearing, enemyDistance);
+		GFTWave.targetLocation = RobocodeUtils.getPointTo(wave.gunLocation, enemyAbsoluteBearing, enemyDistance);
 		wave.lateralDirection = lateralDirection;
 		wave.bulletPower = BULLET_POWER;
 		wave.setSegmentations(enemyDistance, enemyVelocity, lastEnemyVelocity);

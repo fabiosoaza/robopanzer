@@ -3,6 +3,7 @@ package robopanzer.bot;
 import robocode.AdvancedRobot;
 import robocode.RobotDeathEvent;
 import robocode.ScannedRobotEvent;
+import robopanzer.commons.EnemyInfo;
 
 public class Radar {
 
@@ -14,6 +15,7 @@ public class Radar {
 
 	public void init() {
 		robot.setAdjustRadarForGunTurn(true);
+		robot.setAdjustRadarForRobotTurn(true);
 	}
 	
 	public Radar(AdvancedRobot robot, EnemyInfo enemy) {

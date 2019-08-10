@@ -1,5 +1,7 @@
 package robopanzer.bot;
 
+import robopanzer.commons.RobocodeUtils;
+
 public class BulletPredictor {
 
 	private double power;
@@ -9,9 +11,9 @@ public class BulletPredictor {
 
 	public BulletPredictor(double targetDistance) {
 		this.targetDistance = targetDistance;
-		this.power = RobotUtils.calculateFirePower(targetDistance);
-		this.speed = RobotUtils.calculateBulletSpeed(this.power);
-		this.time = RobotUtils.calculateTime(targetDistance, this.speed);
+		this.power = RobocodeUtils.calculateFirePower(targetDistance);
+		this.speed = RobocodeUtils.calculateBulletSpeed(this.power);
+		this.time = RobocodeUtils.calculateTime(targetDistance, this.speed);
 	}
 
 	public double getPower() {

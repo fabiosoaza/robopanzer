@@ -1,4 +1,4 @@
-package robopanzer.bot;
+package robopanzer.commons;
 
 import java.awt.geom.Point2D;
 import java.util.Objects;
